@@ -15,4 +15,5 @@ Install:
 Run the code:
 
 1, Launch the Julia REPL
-2, In the Julia REPL, write 'include("startup.jl")'
+2, In the Julia REPL, write ']' followed by 'activate .'
+3, In the Julia REPL, write 'include("startup.jl")'
