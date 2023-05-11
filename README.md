@@ -1,14 +1,18 @@
-Poissonsolver
-
 Integral equation solver for Poisson's equation in the plane.
 
-Todo: Setup & Build, Running code
+The following has been verified on:
+1, Fedora Linux 37 (Workstation Edition) x86_64
+2, Ubuntu 20.04.6 LTS x86_64
 
+Install:
 
+1, Download the 2d boxcode for an 8th order volume fmm: https://github.com/mrachh/boxcode2d-legacy
+2, Follow the install instructions for the boxcode
+3, Run make install from poisson2d/src/fortan
+4, Launch the Julia REPL in poisson2d/
+4, In the Julia REPL, activate the project through entering ']' followed by 'instantiate'
 
+Run the code:
 
-#gfortran -fPIC -O3 -march=native -funroll-loops -ftree-vectorize -ffast-math -std=legacy -c -w solve_fmm.f -o solve_fmm.o
-
-
-# gfortran -w -o int2.so -shared -fPIC lbfmm2d.o chebrouts.o tables8.o tree_routs4.o tree_vol_coeffs_cheb.o ./common/prini_new.o ./common/legeexps.o ./common/chebexps.o ./common/legetens.o ./common/chebtens.o ./common/voltab2d.o solve_fmm.o -lblas -llapack
-
+1, Launch the Julia REPL
+2, In the Julia REPL, write 'include("startup.jl")'

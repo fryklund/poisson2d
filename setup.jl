@@ -2,6 +2,7 @@ using Pkg
 Pkg.update()
 
 # Install required Julia packages
+#=
 Pkg.add("SpecialFunctions")
 Pkg.add("FastGaussQuadrature")
 Pkg.add("GSL")
@@ -25,4 +26,5 @@ Pkg.add("FileIO")
 Pkg.add("Humanize")
 Pkg.add("Interpolations")
 Pkg.add("NearestNeighbors")
-Pkg.add(url="https://github.com/fryklund/rbfqr")
+Pkg.add(url="https://github.com/mrachh/boxcode2d-legacy")
+=#

@@ -1,0 +1,20 @@
+ eps=
+  0.10000E-12
+ nboxes=
+   21845
+ nlevels=
+       7
+ ltree=
+  371381
+ boxsize=
+  0.10000E+01
+ centers=
+  0.00000E+00  0.00000E+00
+ time taken in bfmm=
+  0.11024E+01
+ nlfbox=
+   16384
+ ntotal=
+ 1048576
+ speed in pps=
+  0.95118E+06

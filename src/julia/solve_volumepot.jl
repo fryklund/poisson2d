@@ -156,9 +156,7 @@ function solve_volumepot(frhs,boxlen,xbdry,xdomain,checkinside,curve,uniform,tol
     itree32 = Int32.(itree)
     iptr32 = Int32.(iptr)
     println("* Volume FMM")
-    ccall( (:solve_fmm_, "../boxcode2d-legacy/int2.so"), Cvoid,(Ref{Float64},Ref{Float64},Ref{Int64},Ref{Int64},Ref{Int64},Ref{Int64},Ref{Int64},Ref{Int32},Ref{Int32},Ref{Float64},Ref{Float64},Ref{Float64}), Ref{Float64}(tolfmm),potmat,Ref{Int64}(ltree),Ref{Int64}(npbox),Ref{Int64}(norder),Ref{Int64}(nboxes),Ref{Int64}(nlevels),itree32,iptr32,fvalspass,boxsizepass,centers)
-
-
+    ccall( (:solve_fmm_, "./src/fortran/juliawraplibboxcode2dlegacy.so"), Cvoid,(Ref{Float64},Ref{Float64},Ref{Int64},Ref{Int64},Ref{Int64},Ref{Int64},Ref{Int64},Ref{Int32},Ref{Int32},Ref{Float64},Ref{Float64},Ref{Float64}), Ref{Float64}(tolfmm),potmat,Ref{Int64}(ltree),Ref{Int64}(npbox),Ref{Int64}(norder),Ref{Int64}(nboxes),Ref{Int64}(nlevels),itree32,iptr32,fvalspass,boxsizepass,centers)
     ########################################################################
     # Evaluate potential on boundary at points xbdry
     println("* Start: Evaluation of potential on boundary")

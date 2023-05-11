@@ -13,29 +13,6 @@ end
 
 export starfish, CurveDesc, kite, harmonicext
 
-using SymPy
-
-# Use any curve parametrized in t in [0, 2 pi), described as string
-# Ex. desc = paramcurve("(1 + 0.3*cos(5*t))*exp(I*t)")
-function paramcurve(str::String,orientation,center=zeros(Float64,2,1))
-    desc = Sym(str) + (center[1] + 1im*center[2])
-    t = symbols("t")
-    # Differentiate curve
-    diff1 = diff(desc, t)
-    diff2 = diff(diff1, t)
-    tang = diff1 / abs(diff1)
-    normal = .-1im*tang    # outward directed
-    return CurveDesc(
-        lambdify(desc),
-        lambdify(diff1),
-        lambdify(diff2),
-        lambdify(normal),
-        lambdify(tang),
-	orientation,
-	center
-    )
-end
-
 function ellipse(;a = 1, b = 1, center=zeros(Float64,2,1),exterior=false)
     if exterior
 	s = -1.0
